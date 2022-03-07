@@ -1,0 +1,74 @@
+.featured{
+    height: 85vh;
+    position: relative;
+    margin-bottom: 20px;
+
+    .category{
+        color: white;
+        position: absolute;
+        top: 100px;
+        font-weight: bold;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+       select{
+           margin-top: 5px;
+           padding: 5px;
+           height: 30px;
+           display: flex;
+           align-items: center;
+           border:2px solid red;
+           border-radius: 5px;
+           cursor: pointer;
+           background-color:var(--main-color);
+           color: white;
+           margin-left: 10px;
+           
+       }
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .info{
+        position: absolute;
+        width: 30%;
+        left:10%;
+        bottom:30%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        img {
+            width: 40vw;
+            margin-top: 100px;
+          }
+        .desc{
+            margin: 20px 0px;
+            font-size: 16px;
+        }
+        .buttons{
+            display: flex;
+            button{
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                margin-right: 5px;
+                &.more{   //without the & operator the color wasn't changing
+                    background-color: gray;
+                    color: white;
+                }
+            }
+            
+            
+        }
+    }
+}
