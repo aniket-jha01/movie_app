@@ -1,17 +1,34 @@
 import React, { useRef, useState } from 'react'
 import "./register.scss"
+import axios from 'axios';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from "react-router-dom";
+import Login from '../login/Login';
 
 export default function Register() {
     const[email,setEmail]=useState("")
-    const[password,setPassword]=useState("")
+    const history=useHistory();
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
     const passwordRef=useRef();
     const emailRef=useRef();
-    const handlefinish=()=>{
-       setPassword(passwordRef.current.value)
-    }
+    const usernameRef = useRef();
     const handlestart=()=>{
         setEmail(emailRef.current.value);
     }
+
+ 
+    
+    const handleFinish = async (e) => {
+        e.preventDefault();
+        setPassword(passwordRef.current.value);
+        setUsername(usernameRef.current.value);
+        try {
+          await axios.post("auth/register", { email,username, password });
+          history.push("/login");
+        } catch (err) {}
+      };
+
     return (
         <div className="register">
             <div className="top">
@@ -21,7 +38,8 @@ export default function Register() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
           />
-          <button className="loginButton">Sign In</button>
+          
+           <button className="loginButton">Sign In</button>
           </div>
          </div>
          <div className="container">
@@ -35,8 +53,9 @@ export default function Register() {
             <button className="registerButton" onClick={handlestart}>Get Started</button>
         </div>):
         (<form className="input">
+            <input type="username" placeholder="username" ref={usernameRef} />
         <input type="password" placeholder="password" ref={passwordRef} />
-        <button className="registerButton" onClick={handlefinish}>Let's Ride yo</button>
+        <button className="registerButton" onClick={handleFinish}>Let's Ride</button>
         </form>)
         }
         
