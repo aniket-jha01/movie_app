@@ -1,6 +1,9 @@
 A full stack movie application inspired by Netflix , implemented on the infamous MERN stack ,
 with safe login and register protocols using Json Web Tokens.
 Consists of the netflix slider, navbar, easy authentication.
+![Screenshot (221)](https://user-images.githubusercontent.com/67206377/169648793-882a234b-6b80-416e-8e79-fead693c4497.png)
+![Screenshot (220)](https://user-images.githubusercontent.com/67206377/169648812-0971dfb1-129e-4522-8f94-a4f819cd09d4.png)
+
 
 
 # Getting Started with Create React App
